@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import time
 
 N = 100
 max_generations = 1000
@@ -120,7 +121,13 @@ def genetic_algorithm():
         generation += 1
 
 
-while possible_solutions.size < 10 * n_queens:
+start_time = time.time()  # Time taken:  521.1123070716858
+
+while possible_solutions.size < 92 * n_queens:
     genetic_algorithm()
 
+print("Time taken: ", time.time() - start_time)
+
 print(possible_solutions)
+
+np.savetxt("part2/eight_queens_solutions.txt", possible_solutions, fmt="%d")
