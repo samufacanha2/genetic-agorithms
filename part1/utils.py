@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from scipy import stats
 
 
-def plot_modes(data, f, plot_mean=False, float_precision=2):
+def plot_modes(data, f, plot_mean=False, float_precision=2, sizing=0.2):
     labels = [
         "Hill Climbing",
         "Local Random Search",
@@ -60,7 +60,7 @@ def plot_modes(data, f, plot_mean=False, float_precision=2):
         rowLabels=labels,
         colLabels=colLabels,
         loc="center",
-        colWidths=[0.2 for x in mode_and_mean_data[0]],
+        colWidths=[sizing for x in mode_and_mean_data[0]],
     )
 
     plt.show()
